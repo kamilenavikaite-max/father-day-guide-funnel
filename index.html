@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>She Needs You Here — Father's Day Gift</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1340195598069225');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1340195598069225&ev=PageView&noscript=1"
+/></noscript>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #fffaf9;
+    height: 100%;
+    overflow: hidden;
+    color: #3d2030;
+  }
+
+  /* ── PROGRESS BAR ── */
+  .progress-wrap {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    height: 4px; background: #ffe0e8;
+  }
+  .progress-fill {
+    height: 100%; background: #d44872;
+    transition: width 0.5s ease;
+    width: 10%;
+  }
+
+  /* ── LOGO ── */
+  .logo-bar {
+    position: fixed; top: 11px; left: 0; right: 0; z-index: 199;
+    display: flex; justify-content: center;
+  }
+  .logo-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
+    color: #b08090;
+  }
+
+  /* ── SCREENS ── */
+  .screen {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 60px 28px 36px;
+    text-align: center;
+    overflow-y: auto;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(12px);
+  }
+  .screen.active {
+    opacity: 1; pointer-events: all;
+    transform: translateY(0);
+  }
+  .screen-inner {
+    max-width: 400px; width: 100%;
+    margin: 0 auto;
+    display: flex; flex-direction: column; align-items: center;
+  }
+
+  /* ── BACKGROUNDS ── */
+  .bg-cream  { background: #fffaf9; }
+  .bg-pink   { background: #fff5f7; }
+  .bg-rose   { background: linear-gradient(160deg, #d44872 0%, #b03060 100%); }
+
+  /* ── TYPOGRAPHY ── */
+  .headline {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(22px, 6vw, 30px);
+    font-weight: 800; line-height: 1.25;
+    letter-spacing: -0.3px;
+    margin-bottom: 14px;
+    color: #3d2030;
+  }
+  .headline-light { color: #ffffff !important; }
+  .subhead {
+    font-size: 16px; line-height: 1.7;
+    font-weight: 400; margin-bottom: 26px;
+    color: #7a4f5e;
+  }
+  .subhead-light { color: rgba(255,255,255,0.85) !important; }
+  .accent { color: #d44872; }
+  .sep {
+    width: 32px; height: 3px; background: #d44872;
+    margin: 0 auto 18px; border-radius: 2px;
+  }
+  .sep-light { background: rgba(255,255,255,0.5); }
+
+  /* ── BADGE ── */
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #ffe0e8; color: #d44872;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 8px 18px; border-radius: 50px;
+    margin-bottom: 22px;
+  }
+
+  /* ── BUTTONS ── */
+  .btn {
+    display: block; width: 100%;
+    padding: 17px 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; font-weight: 700;
+    border: none; border-radius: 50px;
+    cursor: pointer; text-align: center;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-rose {
+    background: linear-gradient(135deg, #ff5c8a, #d44872);
+    color: white;
+    box-shadow: 0 4px 18px rgba(212,72,114,0.3);
+  }
+  .btn-rose:hover { box-shadow: 0 8px 28px rgba(212,72,114,0.45); }
+  .btn-dark {
+    background: #3d2030; color: white;
+  }
+  .btn-dark:hover { box-shadow: 0 8px 24px rgba(61,32,48,0.3); }
+  .btn-outline {
+    background: white; color: #d44872;
+    border: 2px solid #d44872;
+  }
+  .btn-wrap { width: 100%; margin-bottom: 16px; }
+
+  /* ── PROOF LINE ── */
+  .proof-line {
+    font-size: 13px; color: #b08090;
+    display: flex; align-items: center;
+    justify-content: center; gap: 6px;
+    margin-top: 4px;
+  }
+  .proof-line-light { color: rgba(255,255,255,0.65); }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: #b08090; margin-bottom: 18px;
+  }
+  .section-label-light { color: rgba(255,255,255,0.6); }
+
+  /* ── CARD ── */
+  .card {
+    background: white; border-radius: 18px;
+    padding: 22px; width: 100%;
+    box-shadow: 0 4px 20px rgba(212,72,114,0.1);
+    margin-bottom: 18px;
+    text-align: left;
+  }
+  .card-stars { color: #d44872; font-size: 13px; margin-bottom: 10px; }
+  .card-quote {
+    font-size: 14px; line-height: 1.65;
+    color: #3d2030; font-style: italic; margin-bottom: 10px;
+  }
+  .card-attr { font-size: 12px; color: #b08090; font-weight: 500; }
+
+  /* ── BEFORE/AFTER ── */
+  .ba-row {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 14px; margin-bottom: 10px; text-align: left;
+  }
+  .ba-cross { color: #ccc; }
+  .ba-cross span { text-decoration: line-through; color: #ccc; }
+  .ba-check { color: #d44872; font-weight: 600; }
+  .ba-check span { color: #3d2030; font-weight: 500; }
+
+  /* ── STAT ── */
+  .big-stat {
+    font-size: clamp(72px, 20vw, 96px);
+    font-weight: 900; color: white;
+    line-height: 1; margin-bottom: 8px;
+    letter-spacing: -3px;
+  }
+  .stat-label {
+    font-size: 16px; color: rgba(255,255,255,0.9);
+    line-height: 1.45; margin-bottom: 6px; font-weight: 500;
+  }
+  .stat-source {
+    font-size: 11px; color: rgba(255,255,255,0.5);
+    margin-bottom: 22px;
+  }
+
+  /* ── CHECKLIST ── */
+  .checklist { width: 100%; margin-bottom: 22px; text-align: left; }
+  .check-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 14px; color: rgba(255,255,255,0.9);
+    margin-bottom: 11px; line-height: 1.5;
+  }
+  .ck { color: rgba(255,255,255,0.7); flex-shrink: 0; font-size: 15px; margin-top: 1px; }
+
+  /* ── FOUNDER NOTE ── */
+  .founder-card {
+    background: white; border-radius: 18px;
+    padding: 24px; width: 100%;
+    box-shadow: 0 4px 20px rgba(212,72,114,0.1);
+    text-align: left; margin-bottom: 20px;
+  }
+  .founder-avatar {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: linear-gradient(135deg, #ffb3c6, #d44872);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; margin-bottom: 14px;
+  }
+  .founder-name {
+    font-size: 13px; font-weight: 700; color: #3d2030; margin-bottom: 2px;
+  }
+  .founder-role {
+    font-size: 11px; color: #b08090; margin-bottom: 14px;
+    font-weight: 500; letter-spacing: 0.5px;
+  }
+  .founder-text {
+    font-size: 14px; line-height: 1.75; color: #5a3545;
+  }
+  .founder-text p { margin-bottom: 10px; }
+  .founder-text p:last-child { margin-bottom: 0; }
+  .founder-sig {
+    margin-top: 14px; font-size: 13px;
+    color: #d44872; font-weight: 600;
+    font-style: italic;
+  }
+
+  /* ── CHIPS ── */
+  .chips { width: 100%; display: flex; flex-direction: column; gap: 10px; margin-bottom: 8px; }
+  .chip {
+    background: white; border: 2px solid #ffe0e8;
+    border-radius: 14px; padding: 15px 18px;
+    font-size: 15px; color: #3d2030; font-weight: 500;
+    cursor: pointer; text-align: left;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+    display: flex; align-items: center; gap: 10px;
+    box-shadow: 0 2px 8px rgba(212,72,114,0.06);
+  }
+  .chip:hover, .chip.selected {
+    border-color: #d44872; background: #fff5f7;
+    transform: translateX(4px);
+  }
+
+  /* ── COUNTDOWN ── */
+  .urgency-box {
+    background: white; border: 2px solid #ffe0e8;
+    border-radius: 16px; padding: 18px 20px;
+    width: 100%; margin-bottom: 22px;
+    box-shadow: 0 2px 12px rgba(212,72,114,0.08);
+  }
+  .urgency-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #d44872; margin-bottom: 14px;
+  }
+  .countdown { display: flex; justify-content: center; gap: 10px; }
+  .cd-unit {
+    background: #fff5f7; border-radius: 10px;
+    padding: 10px 12px; min-width: 58px;
+  }
+  .cd-num {
+    font-size: 28px; font-weight: 800; color: #3d2030; line-height: 1;
+    letter-spacing: -1px;
+  }
+  .cd-label {
+    font-size: 10px; color: #b08090;
+    text-transform: uppercase; letter-spacing: 1px; margin-top: 3px;
+  }
+
+  /* ── EMAIL ── */
+  .email-input {
+    width: 100%; padding: 17px 18px;
+    border: 2px solid #ffe0e8; border-radius: 14px;
+    font-size: 16px; color: #3d2030;
+    background: white; outline: none;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 8px rgba(212,72,114,0.06);
+  }
+  .email-input:focus { border-color: #d44872; }
+  .email-input.error { border-color: #e05555; }
+
+  /* ── PRODUCT BOX ── */
+  .product-box {
+    background: #fff5f7; border-radius: 16px;
+    padding: 20px; width: 100%; text-align: left;
+    margin-bottom: 18px;
+    border: 1px solid #ffe0e8;
+  }
+  .product-title {
+    font-size: 17px; font-weight: 800; color: #3d2030; margin-bottom: 2px;
+  }
+  .product-by { font-size: 12px; color: #b08090; margin-bottom: 14px; }
+  .product-item {
+    display: flex; align-items: flex-start; gap: 8px;
+    font-size: 13px; color: #5a3545; margin-bottom: 8px; line-height: 1.45;
+  }
+  .pi-check { color: #d44872; flex-shrink: 0; }
+
+  /* ── PRICE ── */
+  .price-block { text-align: center; margin-bottom: 20px; }
+  .price-old { font-size: 16px; color: #ccc; text-decoration: line-through; }
+  .price-new {
+    font-size: clamp(44px, 12vw, 56px);
+    font-weight: 900; color: #3d2030; line-height: 1;
+    letter-spacing: -2px;
+  }
+  .price-tag {
+    font-size: 12px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; color: #d44872; margin-top: 2px;
+  }
+
+  /* ── TRUST STRIP ── */
+  .trust-strip {
+    display: flex; flex-wrap: wrap;
+    justify-content: center; gap: 12px; margin-top: 14px;
+  }
+  .trust-item { font-size: 12px; color: #b08090; }
+
+  /* ── SUCCESS ── */
+  .success-icon { font-size: 58px; margin-bottom: 14px; }
+  .email-confirm-box {
+    background: white; border: 2px solid #d44872;
+    border-radius: 14px; padding: 16px 22px;
+    width: 100%; margin-bottom: 20px;
+    box-shadow: 0 4px 16px rgba(212,72,114,0.12);
+  }
+  .steps-box {
+    background: white; border-radius: 14px;
+    padding: 20px; width: 100%;
+    border: 1px solid #ffe0e8;
+    text-align: left; margin-bottom: 16px;
+  }
+  .steps-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #d44872; margin-bottom: 14px;
+  }
+  .step-row {
+    display: flex; gap: 10px; margin-bottom: 10px;
+    font-size: 14px; color: #5a3545; align-items: flex-start;
+    line-height: 1.5;
+  }
+  .step-num { color: #d44872; font-weight: 700; flex-shrink: 0; }
+
+  /* ── CROSSELL ── */
+  .crossell-box {
+    background: white; border-radius: 14px;
+    padding: 18px; width: 100%;
+    border: 1px solid #ffe0e8; text-align: left;
+    margin-top: 12px;
+  }
+  .crossell-box h3 { font-size: 14px; font-weight: 700; color: #3d2030; margin-bottom: 6px; }
+  .crossell-box p { font-size: 13px; color: #7a4f5e; line-height: 1.5; margin-bottom: 10px; }
+  .crossell-link { font-size: 13px; font-weight: 700; color: #d44872; text-decoration: none; }
+
+  @media (max-height: 680px) {
+    .screen { justify-content: flex-start; padding-top: 52px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-wrap">
+  <div class="progress-fill" id="progressBar"></div>
+</div>
+<div class="logo-bar">
+  <span class="logo-text">New Mama Hub</span>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SCREEN 1 · HERO
+══════════════════════════════════════════ -->
+<div class="screen bg-cream active" id="s1">
+  <div class="screen-inner">
+    <div class="badge">🎁 Father's Day Gift</div>
+    <h1 class="headline">"He loves you.<br>He just doesn't know<br>what you're going through."</h1>
+    <div class="sep"></div>
+    <p class="subhead">Give him the guide that changes everything — before Father's Day.</p>
+    <div class="btn-wrap">
+      <button class="btn btn-rose" onclick="next()">See what's inside →</button>
+    </div>
+    <p class="proof-line">⭐⭐⭐⭐⭐ &nbsp; 3,847 moms have gifted this to their partner</p>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SCREEN 2 · EMPATHY
+══════════════════════════════════════════ -->
+<div class="screen bg-pink" id="s2">
+  <div class="screen-inner">
+    <h2 class="headline">"You're doing everything. And he's trying — but flying completely blind."</h2>
+    <div class="sep"></div>
+    <p class="subhead">He sees you exhausted. He wants to help. But he doesn't know what you actually need — and asking him to just figure it out hasn't been working.</p>
+    <p class="subhead" style="margin-top:-14px;">This isn't about blame. It's about giving him a map.</p>
+    <div class="btn-wrap">
+      <button class="btn btn-rose" onclick="next()">That's exactly it →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SCREEN 3 · PROOF #1 — Testimonial
+══════════════════════════════════════════ -->
+<div class="screen bg-cream" id="s3">
+  <div class="screen-inner">
+    <p class="section-label">What happened when moms gifted this:</p>
+    <div class="card">
+      <div class="card-stars">⭐⭐⭐⭐⭐</div>
+      <p class="card-quote">"I sent this to my husband at 2am while I was up feeding our daughter. He read the whole thing before I woke up. That morning, he got up with her without me asking — for the first time ever."</p>
+      <p class="card-attr">— Jessica R., 8 weeks postpartum</p>
+    </div>
+    <div style="width:100%; margin-bottom:22px;">
+      <div class="ba-row">
+        <span class="ba-cross">✗</span>
+        <span class="ba-cross"><span>Months of trying to explain it yourself</span></span>
+      </div>
+      <div class="ba-row">
+        <span class="ba-check">✓</span>
+        <span class="ba-check"><span>One night, one read, real change</span></span>
+      </div>
+    </div>
+    <div class="btn-wrap">
+      <button class="btn btn-rose" onclick="next()">Show me another →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SCREEN 4 · PROOF #2 — Stat
+══════════════════════════════════════════ -->
+<div class="screen bg-rose" id="s4">
+  <div class="screen-inner">
+    <div class="big-stat">67%</div>
+    <p class="stat-label">of couples say their relationship suffers<br>most in the first year after baby</p>
+    <p class="stat-source">— Gottman Institute Research</p>
+    <p style="color:rgba(255,255,255,0.8); font-size:14px; margin-bottom:16px;">This book was written so you don't become that statistic. He'll learn:</p>
+    <div class="checklist">
+      <div class="check-item"><span class="ck">✓</span><span>Why you cry and don't always know why</span></div>
+      <div class="check-item"><span class="ck">✓</span><span>What "I'm fine" really means at 3am</span></div>
+      <div class="check-item"><span class="ck">✓</span><span>How to be present without fixing everything</span></div>
+      <div class="check-item"><span class="ck">✓</span><span>What postpartum depression looks like from the inside</span></div>
+      <div class="check-item"><span class="ck">✓</span><span>Why intimacy feels different — and what to do</span></div>
+      <div class="check-item"><span class="ck">✓</span><span>How to be the partner she needs right now</span></div>
+    </div>
+    <div class="btn-wrap">
+      <button class="btn btn-outline" onclick="next()" style="background:white; color:#d44872;">I want him to understand this →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SCREEN 5 · FOUNDER NOTE
+══════════════════════════════════════════ -->
+<div class="screen bg-pink" id="s5">
+  <div class="screen-inner">
+    <p class="section-label">A note from the authors</p>
+    <div class="founder-card">
+      <div class="founder-avatar">💌</div>
+      <div class="founder-name">Sara & Mike — co-authors</div>
+      <div class="founder-role">New Mama Hub · Founders</div>
+      <div class="founder-text">
+        <p>When our daughter was born, Mike was lost. He loved us both completely — but he had no idea what I was going through. The sleeplessness, the identity shift, the loneliness even when he was right there.</p>
+        <p>We wrote this book together — me sharing what I desperately needed him to understand, and Mike sharing honestly what it felt like from his side. Two perspectives, one guide.</p>
+        <p>After he read an early draft, something shifted. He stopped trying to fix things and started just being <em>present</em>. That changed everything for us.</p>
+        <p>That's exactly what we want for you.</p>
+        <div class="founder-sig">— Sara & Mike 💛</div>
+      </div>
+    </div>
+    <div class="btn-wrap">
+      <button class="btn btn-rose" onclick="next()">This is what we need →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SCREEN 6 · PERSONALIZATION
+══════════════════════════════════════════ -->
+<div class="screen bg-cream" id="s6">
+  <div class="screen-inner">
+    <h2 class="headline">Where are you<br>in your journey?</h2>
+    <p class="subhead">This helps us show you what other moms in your exact situation experienced.</p>
+    <div class="chips">
+      <button class="chip" onclick="pickStage('pregnant', this)">🤰 Still pregnant</button>
+      <button class="chip" onclick="pickStage('newborn', this)">🌙 0–3 months postpartum</button>
+      <button class="chip" onclick="pickStage('growing', this)">☀️ 3–6 months postpartum</button>
+      <button class="chip" onclick="pickStage('older', this)">🌱 6+ months postpartum</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SCREEN 7 · URGENCY
+══════════════════════════════════════════ -->
+<div class="screen bg-pink" id="s7">
+  <div class="screen-inner">
+    <h2 class="headline" id="personalHeadline">You're not alone in this.</h2>
+    <div class="sep"></div>
+    <p style="font-size:15px; color:#7a4f5e; margin-bottom:22px; line-height:1.65;">
+      <span style="font-size:26px; font-weight:900; color:#d44872; letter-spacing:-1px;">2,847 moms</span><br>
+      in your situation have gifted this to their partner.
+    </p>
+    <div class="urgency-box">
+      <div class="urgency-label">⏰ Father's Day Sale — Ends June 15th</div>
+      <div class="countdown">
+        <div class="cd-unit"><div class="cd-num" id="cdD">00</div><div class="cd-label">Days</div></div>
+        <div class="cd-unit"><div class="cd-num" id="cdH">00</div><div class="cd-label">Hours</div></div>
+        <div class="cd-unit"><div class="cd-num" id="cdM">00</div><div class="cd-label">Mins</div></div>
+        <div class="cd-unit"><div class="cd-num" id="cdS">00</div><div class="cd-label">Secs</div></div>
+      </div>
+    </div>
+    <div class="btn-wrap">
+      <button class="btn btn-rose" onclick="next()">Claim the sale price →</button>
+    </div>
+    <p class="proof-line"><del style="opacity:0.4">$29.99</del>&nbsp;→&nbsp;<strong style="color:#d44872;">$14.99 today only</strong></p>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SCREEN 8 · EMAIL
+══════════════════════════════════════════ -->
+<div class="screen bg-cream" id="s8">
+  <div class="screen-inner">
+    <h2 class="headline">Where should we<br>send your download link?</h2>
+    <p class="subhead">We'll email you the ebook instantly after purchase.</p>
+    <input type="email" class="email-input" id="emailInput" placeholder="Your email address" />
+    <div class="btn-wrap">
+      <button class="btn btn-dark" onclick="submitEmail()">Continue to checkout →</button>
+    </div>
+    <p class="proof-line" style="margin-bottom:18px;">👥 50+ moms joined today &nbsp;·&nbsp; 🔒 No spam, ever</p>
+    <div class="card">
+      <div class="card-stars">⭐⭐⭐⭐⭐</div>
+      <p class="card-quote">"My husband finished it in one sitting and came to me with a list of things he wanted to do differently. Best $15 I've ever spent."</p>
+      <p class="card-attr">— Amanda T., New Mama Hub member</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SCREEN 9 · PAYWALL
+══════════════════════════════════════════ -->
+<div class="screen bg-pink" id="s9">
+  <div class="screen-inner">
+    <h2 class="headline" style="margin-bottom:18px;">Your gift is almost ready 🎁</h2>
+    <div class="product-box">
+      <div class="product-title">She Needs You Here</div>
+      <div class="product-by">A Man's Guide to the Fourth Trimester · New Mama Hub</div>
+      <div class="product-item"><span class="pi-check">✓</span><span>Instant PDF — sent to your email</span></div>
+      <div class="product-item"><span class="pi-check">✓</span><span>10 chapters — everything he needs to know</span></div>
+      <div class="product-item"><span class="pi-check">✓</span><span>Emotions, body changes, intimacy & mental health</span></div>
+      <div class="product-item"><span class="pi-check">✓</span><span>Written by a wife AND husband — both perspectives</span></div>
+      <div class="product-item"><span class="pi-check">✓</span><span>Forward it directly to your partner</span></div>
+    </div>
+    <div class="price-block">
+      <div class="price-old">$29.99</div>
+      <div class="price-new">$14.99</div>
+      <div class="price-tag">Father's Day Sale</div>
+    </div>
+    <div class="btn-wrap">
+      <a class="btn btn-rose" id="stripeBtn"
+        href="https://buy.stripe.com/aFa14g15NfH60S4g2K9k402"
+        target="_self" style="text-decoration:none;"
+        onclick="fbq('track','InitiateCheckout',{value:14.99,currency:'USD'})">
+        🔒 &nbsp;Get Instant Access — $14.99
+      </a>
+    </div>
+    <div class="trust-strip">
+      <span class="trust-item">🔒 Secure checkout</span>
+      <span class="trust-item">⚡ Instant email delivery</span>
+      <span class="trust-item">💛 Satisfaction guaranteed</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SCREEN 10 · SUCCESS
+══════════════════════════════════════════ -->
+<div class="screen bg-cream" id="s10">
+  <div class="screen-inner">
+    <div class="success-icon">💌</div>
+    <h2 class="headline">It's on its way!</h2>
+    <p class="subhead" style="margin-bottom:12px;">We're sending the ebook to:</p>
+
+    <div class="email-confirm-box">
+      <div style="font-size:11px; color:#b08090; letter-spacing:1px; text-transform:uppercase; margin-bottom:6px;">Delivery email</div>
+      <div id="successEmail" style="font-size:17px; font-weight:800; color:#3d2030; word-break:break-all;">your email</div>
+    </div>
+
+    <p style="font-size:14px; color:#7a4f5e; line-height:1.7; margin-bottom:20px; max-width:340px;">
+      Check your inbox in the next few minutes — including your spam folder just in case. It arrives as a PDF, ready to forward to him. 🎁
+    </p>
+
+    <div class="steps-box">
+      <div class="steps-label">What happens next</div>
+      <div class="step-row"><span class="step-num">1.</span><span>Check your inbox for an email from New Mama Hub</span></div>
+      <div class="step-row"><span class="step-num">2.</span><span>Open the PDF attachment — it's his guide</span></div>
+      <div class="step-row"><span class="step-num">3.</span><span>Forward it to him, print it, or leave it open on his phone 💛</span></div>
+    </div>
+
+    <div class="crossell-box">
+      <h3>🌸 The Fourth Trimester app is for you</h3>
+      <p>Daily mood check-ins, breathing exercises, a community of moms just like you. Always free.</p>
+      <a href="https://fourth-trimester.vercel.app" class="crossell-link" target="_blank">Try the app →</a>
+    </div>
+
+    <p style="font-size:13px; color:#b08090; margin-top:18px;">
+      Know a mama who needs this? &nbsp;
+      <a href="javascript:void(0)" onclick="shareLink()" style="color:#d44872; font-weight:600;">Share this gift →</a>
+    </p>
+  </div>
+</div>
+
+
+<script>
+  const TOTAL = 10;
+  let cur = 1;
+  let userEmail = '';
+
+  const STAGE_HEADLINES = {
+    pregnant: '"You\'re about to enter the fourth trimester — and so is he."',
+    newborn:  '"The newborn stage is the hardest. He needs this now."',
+    growing:  '"You\'re deeper in it than anyone tells you. He still needs the map."',
+    older:    '"The fog is lifting — but the reconnection work starts now."'
+  };
+
+  const STEP_NAMES = {
+    1:  'hero',
+    2:  'empathy',
+    3:  'testimonial',
+    4:  'stat_proof',
+    5:  'founder_note',
+    6:  'q_stage',
+    7:  'urgency_countdown',
+    8:  'email_capture',
+    9:  'paywall',
+    10: 'success'
+  };
+
+  function trackStep(n) {
+    fbq('trackCustom', 'FunnelStep', {
+      step_number: n,
+      step_name: STEP_NAMES[n] || 'unknown',
+      funnel: 'ebook_fathers_day'
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const p = new URLSearchParams(window.location.search);
+    if (p.get('payment') === 'success') {
+      const saved = sessionStorage.getItem('ft_buyer_email');
+      if (saved) document.getElementById('successEmail').textContent = saved;
+      fbq('track', 'Purchase', { value: 14.99, currency: 'USD' });
+      goTo(10);
+    } else {
+      updateProgress();
+      trackStep(1);
+    }
+    startCountdown();
+  });
+
+  function goTo(n) {
+    document.getElementById(`s${cur}`).classList.remove('active');
+    cur = n;
+    const el = document.getElementById(`s${cur}`);
+    el.classList.add('active');
+    el.scrollTop = 0;
+    updateProgress();
+    trackStep(n);
+  }
+
+  function next() { if (cur < TOTAL) goTo(cur + 1); }
+
+  function updateProgress() {
+    document.getElementById('progressBar').style.width =
+      Math.round((cur / TOTAL) * 100) + '%';
+  }
+
+  function pickStage(s, el) {
+    document.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    const h = document.getElementById('personalHeadline');
+    if (STAGE_HEADLINES[s]) h.textContent = STAGE_HEADLINES[s];
+    setTimeout(() => next(), 350);
+  }
+
+  function submitEmail() {
+    const el = document.getElementById('emailInput');
+    const v = el.value.trim();
+    if (!v || !v.includes('@') || !v.includes('.')) {
+      el.classList.add('error');
+      el.placeholder = 'Please enter a valid email';
+      el.value = '';
+      return;
+    }
+    el.classList.remove('error');
+    userEmail = v;
+    document.getElementById('successEmail').textContent = v;
+    sessionStorage.setItem('ft_buyer_email', v);
+    fbq('track', 'Lead');
+    const base = 'https://buy.stripe.com/aFa14g15NfH60S4g2K9k402';
+    document.getElementById('stripeBtn').href =
+      base + '?prefilled_email=' + encodeURIComponent(v);
+    next();
+  }
+
+  function startCountdown() {
+    const target = new Date('2026-06-15T23:59:59');
+    function tick() {
+      const diff = target - Date.now();
+      if (diff <= 0) return;
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('cdD').textContent = String(d).padStart(2,'0');
+      document.getElementById('cdH').textContent = String(h).padStart(2,'0');
+      document.getElementById('cdM').textContent = String(m).padStart(2,'0');
+      document.getElementById('cdS').textContent = String(s).padStart(2,'0');
+    }
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  function shareLink() {
+    const url = window.location.origin + window.location.pathname;
+    if (navigator.share) {
+      navigator.share({ title: 'She Needs You Here — Father\'s Day Gift', url });
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(() => alert('Link copied!'));
+    }
+  }
+</script>
+</body>
+</html>
