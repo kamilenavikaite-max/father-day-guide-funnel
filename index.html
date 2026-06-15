@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>She Needs You Here — Father's Day Gift</title>
+<title>Dad's Guide to the Fourth Trimester — Father's Day Gift</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <!-- Meta Pixel -->
@@ -22,6 +22,7 @@ fbq('track','PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1340195598069225&ev=PageView&noscript=1"
 /></noscript>
+
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { height: 100%; }
@@ -33,10 +34,21 @@ src="https://www.facebook.com/tr?id=1340195598069225&ev=PageView&noscript=1"
     color: #3d2030;
   }
 
+  /* ── SALE BANNER ── */
+  .sale-banner {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+    background: #2d1020;
+    color: #fff;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    text-align: center; padding: 9px 16px;
+  }
+  .sale-banner span { color: #ff6b9d; }
+
   /* ── PROGRESS BAR ── */
   .progress-wrap {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-    height: 4px; background: #ffe0e8;
+    position: fixed; top: 32px; left: 0; right: 0; z-index: 200;
+    height: 3px; background: #ffe0e8;
   }
   .progress-fill {
     height: 100%; background: #d44872;
@@ -45,11 +57,11 @@ src="https://www.facebook.com/tr?id=1340195598069225&ev=PageView&noscript=1"
 
   /* ── LOGO ── */
   .logo-bar {
-    position: fixed; top: 11px; left: 0; right: 0; z-index: 199;
+    position: fixed; top: 44px; left: 0; right: 0; z-index: 199;
     display: flex; justify-content: center;
   }
   .logo-text {
-    font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
     color: #b08090;
   }
 
@@ -58,17 +70,14 @@ src="https://www.facebook.com/tr?id=1340195598069225&ev=PageView&noscript=1"
     position: fixed; top: 0; left: 0; right: 0; bottom: 0;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
-    padding: 60px 28px 36px;
+    padding: 78px 24px 32px;
     text-align: center;
     overflow-y: auto;
     opacity: 0; pointer-events: none;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    transform: translateY(12px);
+    transition: opacity 0.38s ease, transform 0.38s ease;
+    transform: translateY(14px);
   }
-  .screen.active {
-    opacity: 1; pointer-events: all;
-    transform: translateY(0);
-  }
+  .screen.active { opacity: 1; pointer-events: all; transform: translateY(0); }
   .screen-inner {
     max-width: 400px; width: 100%;
     margin: 0 auto;
@@ -78,38 +87,38 @@ src="https://www.facebook.com/tr?id=1340195598069225&ev=PageView&noscript=1"
   /* ── BACKGROUNDS ── */
   .bg-cream { background: #fffaf9; }
   .bg-pink  { background: #fff5f7; }
+  .bg-dark  { background: linear-gradient(160deg, #2d1020 0%, #4a1e35 100%); }
 
   /* ── TYPOGRAPHY ── */
-  .headline {
-    font-size: clamp(22px, 6vw, 30px);
-    font-weight: 800; line-height: 1.25;
-    letter-spacing: -0.3px;
-    margin-bottom: 14px;
-    color: #3d2030;
+  .eyebrow {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 1.8px; text-transform: uppercase;
+    color: #d44872; margin-bottom: 12px;
   }
+  .eyebrow-light { color: #ff9dc0; }
+  .headline {
+    font-size: clamp(24px, 6.5vw, 32px);
+    font-weight: 900; line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+    color: #2d1020;
+  }
+  .headline-light { color: #fff !important; }
   .subhead {
-    font-size: 15px; line-height: 1.7;
-    font-weight: 400; margin-bottom: 20px;
+    font-size: 15px; line-height: 1.72;
+    font-weight: 400; margin-bottom: 22px;
     color: #7a4f5e;
   }
-  .sep {
-    width: 32px; height: 3px; background: #d44872;
-    margin: 0 auto 18px; border-radius: 2px;
-  }
-  .section-label {
-    font-size: 11px; font-weight: 600;
-    letter-spacing: 1.5px; text-transform: uppercase;
-    color: #b08090; margin-bottom: 14px;
-  }
+  .subhead-light { color: rgba(255,255,255,0.78) !important; }
+  .sep { width: 28px; height: 3px; background: #d44872; margin: 0 auto 16px; border-radius: 2px; }
+  .accent { color: #d44872; }
 
   /* ── BADGE ── */
   .badge {
     display: inline-flex; align-items: center; gap: 6px;
     background: #ffe0e8; color: #d44872;
-    font-size: 12px; font-weight: 700;
-    letter-spacing: 0.5px;
-    padding: 8px 18px; border-radius: 50px;
-    margin-bottom: 18px;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.4px;
+    padding: 7px 16px; border-radius: 50px; margin-bottom: 18px;
   }
 
   /* ── BUTTONS ── */
@@ -119,280 +128,442 @@ src="https://www.facebook.com/tr?id=1340195598069225&ev=PageView&noscript=1"
     font-family: 'Inter', sans-serif;
     font-size: 15px; font-weight: 700;
     border: none; border-radius: 50px;
-    cursor: pointer; text-align: center;
-    text-decoration: none;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    cursor: pointer; text-align: center; text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s;
   }
   .btn:hover { transform: translateY(-2px); }
   .btn-rose {
     background: linear-gradient(135deg, #ff5c8a, #d44872);
-    color: white;
-    box-shadow: 0 4px 18px rgba(212,72,114,0.3);
+    color: white; box-shadow: 0 4px 18px rgba(212,72,114,0.32);
   }
   .btn-rose:hover { box-shadow: 0 8px 28px rgba(212,72,114,0.45); }
-  .btn-dark { background: #3d2030; color: white; }
-  .btn-dark:hover { box-shadow: 0 8px 24px rgba(61,32,48,0.3); }
+  .btn-dark { background: #2d1020; color: white; }
+  .btn-dark:hover { box-shadow: 0 8px 24px rgba(45,16,32,0.32); }
   .btn-wrap { width: 100%; margin-bottom: 12px; }
 
   /* ── PROOF LINE ── */
   .proof-line {
     font-size: 13px; color: #b08090;
-    display: flex; align-items: center;
-    justify-content: center; gap: 6px;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
   }
 
-  /* ── CHAPTER LIST ── */
-  .chapter-list { width: 100%; text-align: left; margin-bottom: 18px; }
-  .chapter-row {
-    display: flex; gap: 12px; align-items: flex-start;
-    padding: 11px 0; border-bottom: 1px solid #ffe0e8;
-    cursor: pointer;
-    transition: background 0.15s;
+  /* ── QUIZ PROGRESS ── */
+  .quiz-label {
+    font-size: 11px; font-weight: 600; color: #b08090;
+    letter-spacing: 1px; text-transform: uppercase;
+    margin-bottom: 18px;
   }
-  .chapter-row:last-child { border-bottom: none; }
-  .chapter-row:hover { background: #fff5f7; margin: 0 -8px; padding: 11px 8px; border-radius: 10px; }
-  .ch-num {
-    font-size: 10px; font-weight: 800; color: #d44872;
-    min-width: 26px; padding-top: 3px; flex-shrink: 0;
+  .quiz-dots {
+    display: flex; gap: 6px; justify-content: center; margin-bottom: 20px;
   }
-  .ch-title { font-size: 13px; font-weight: 800; color: #3d2030; margin-bottom: 2px; }
-  .ch-desc { font-size: 12px; color: #7a4f5e; line-height: 1.5; }
-  .ch-expand {
-    font-size: 11px; color: #d44872; margin-top: 6px;
-    display: none; line-height: 1.55;
+  .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #ffe0e8; transition: background 0.3s;
   }
-  .chapter-row.open .ch-expand { display: block; }
-  .ch-arrow { font-size: 11px; color: #d44872; flex-shrink: 0; margin-top: 3px; transition: transform 0.2s; }
-  .chapter-row.open .ch-arrow { transform: rotate(90deg); }
+  .dot.active { background: #d44872; }
+  .dot.done { background: #f5a0b8; }
 
-  /* ── PRICE BLOCK (screen 1) ── */
-  .price-hero {
+  /* ── CHIPS ── */
+  .chips { width: 100%; display: flex; flex-direction: column; gap: 9px; margin-bottom: 8px; }
+  .chip {
+    background: white; border: 2px solid #ffe0e8;
+    border-radius: 14px; padding: 14px 16px;
+    font-size: 14px; color: #3d2030; font-weight: 500;
+    cursor: pointer; text-align: left;
+    transition: all 0.18s ease;
+    font-family: 'Inter', sans-serif;
     display: flex; align-items: center; gap: 10px;
-    justify-content: center; margin-bottom: 18px; flex-wrap: wrap;
+    box-shadow: 0 2px 8px rgba(212,72,114,0.05);
+    line-height: 1.4;
   }
-  .price-hero-old { font-size: 16px; color: #ccc; text-decoration: line-through; }
-  .price-hero-new { font-size: 40px; font-weight: 900; color: #d44872; line-height: 1; letter-spacing: -1px; }
-  .price-hero-tag {
+  .chip:hover { border-color: #d44872; background: #fff5f7; transform: translateX(3px); }
+  .chip.selected { border-color: #d44872; background: #fff5f7; font-weight: 700; transform: translateX(3px); }
+  .chip-em { font-size: 18px; flex-shrink: 0; }
+
+  /* ── RESULT CARD ── */
+  .result-card {
+    background: white; border-radius: 18px;
+    padding: 22px; width: 100%;
+    box-shadow: 0 4px 24px rgba(212,72,114,0.1);
+    border: 1px solid #ffe0e8; text-align: left;
+    margin-bottom: 16px;
+  }
+  .result-type {
+    font-size: 10px; font-weight: 800; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #d44872; margin-bottom: 8px;
+  }
+  .result-title {
+    font-size: 19px; font-weight: 900; color: #2d1020;
+    line-height: 1.25; margin-bottom: 12px;
+  }
+  .result-body {
+    font-size: 14px; color: #5a3545; line-height: 1.75;
+  }
+  .result-body p { margin-bottom: 10px; }
+  .result-body p:last-child { margin-bottom: 0; }
+
+  /* ── INSIGHT BOX ── */
+  .insight-box {
+    background: linear-gradient(135deg, #2d1020, #4a1e35);
+    border-radius: 16px; padding: 20px 22px;
+    width: 100%; text-align: left; margin-bottom: 16px;
+  }
+  .insight-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #ff9dc0; margin-bottom: 10px;
+  }
+  .insight-text {
+    font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.72;
+  }
+
+  /* ── REFRAME BOX ── */
+  .reframe-box {
+    background: #fff5f7; border: 1.5px solid #ffc5d5;
+    border-radius: 14px; padding: 16px 18px;
+    width: 100%; text-align: left; margin-bottom: 18px;
+  }
+  .reframe-box p {
+    font-size: 14px; color: #3d2030; line-height: 1.7;
+  }
+  .reframe-box strong { color: #d44872; }
+
+  /* ── WHAT HE'LL LEARN ── */
+  .learn-list { width: 100%; text-align: left; margin-bottom: 18px; }
+  .learn-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 14px; color: #3d2030;
+    padding: 9px 0; border-bottom: 1px solid #ffe0e8;
+    line-height: 1.45;
+  }
+  .learn-item:last-child { border-bottom: none; }
+  .learn-num {
+    width: 22px; height: 22px; border-radius: 50%;
     background: #d44872; color: white;
-    font-size: 11px; font-weight: 700; letter-spacing: 1px;
-    text-transform: uppercase; padding: 4px 12px; border-radius: 50px;
+    font-size: 10px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
   }
+
+  /* ── TESTIMONIAL ── */
+  .tcard {
+    background: white; border-radius: 16px;
+    padding: 18px; width: 100%;
+    box-shadow: 0 3px 16px rgba(212,72,114,0.08);
+    border: 1px solid #ffe0e8; text-align: left;
+    margin-bottom: 14px;
+  }
+  .tcard-stars { color: #d44872; font-size: 12px; margin-bottom: 8px; }
+  .tcard-quote { font-size: 13.5px; font-style: italic; color: #3d2030; line-height: 1.65; margin-bottom: 8px; }
+  .tcard-attr { font-size: 11px; color: #b08090; font-weight: 500; }
 
   /* ── EMAIL INPUT ── */
   .email-input {
-    width: 100%; padding: 17px 18px;
+    width: 100%; padding: 16px 18px;
     border: 2px solid #ffe0e8; border-radius: 14px;
-    font-size: 16px; color: #3d2030;
-    background: white; outline: none;
-    font-family: 'Inter', sans-serif;
-    transition: border-color 0.2s;
-    margin-bottom: 14px;
-    box-shadow: 0 2px 8px rgba(212,72,114,0.06);
+    font-size: 16px; color: #3d2030; background: white; outline: none;
+    font-family: 'Inter', sans-serif; transition: border-color 0.2s;
+    margin-bottom: 12px; box-shadow: 0 2px 8px rgba(212,72,114,0.06);
   }
   .email-input:focus { border-color: #d44872; }
   .email-input.error { border-color: #e05555; }
 
-  /* ── CARD ── */
-  .card {
-    background: white; border-radius: 16px;
-    padding: 20px; width: 100%;
-    box-shadow: 0 4px 20px rgba(212,72,114,0.08);
-    margin-bottom: 16px; text-align: left;
-    border: 1px solid #ffe0e8;
-  }
-  .card-stars { color: #d44872; font-size: 12px; margin-bottom: 8px; }
-  .card-quote { font-size: 13.5px; font-style: italic; color: #3d2030; line-height: 1.65; margin-bottom: 8px; }
-  .card-attr { font-size: 11px; color: #b08090; font-weight: 500; }
-
   /* ── PRODUCT BOX ── */
   .product-box {
     background: #fff5f7; border-radius: 16px;
-    padding: 20px; width: 100%; text-align: left;
-    margin-bottom: 16px; border: 1px solid #ffe0e8;
+    padding: 18px; width: 100%; text-align: left;
+    margin-bottom: 14px; border: 1px solid #ffe0e8;
   }
-  .product-title { font-size: 17px; font-weight: 800; color: #3d2030; margin-bottom: 2px; }
-  .product-by { font-size: 12px; color: #b08090; margin-bottom: 14px; }
+  .product-title { font-size: 16px; font-weight: 800; color: #2d1020; margin-bottom: 2px; }
+  .product-by { font-size: 12px; color: #b08090; margin-bottom: 12px; }
   .product-item {
     display: flex; align-items: flex-start; gap: 8px;
-    font-size: 13px; color: #5a3545; margin-bottom: 8px; line-height: 1.45;
+    font-size: 13px; color: #5a3545; margin-bottom: 7px; line-height: 1.45;
   }
   .pi-check { color: #d44872; flex-shrink: 0; }
 
-  /* ── PRICE BLOCK (paywall) ── */
-  .price-block { text-align: center; margin-bottom: 16px; }
-  .price-old { font-size: 16px; color: #ccc; text-decoration: line-through; }
+  /* ── PRICE ── */
+  .price-block { text-align: center; margin-bottom: 14px; }
+  .price-old { font-size: 15px; color: #ccc; text-decoration: line-through; }
   .price-new {
-    font-size: clamp(44px, 12vw, 56px);
-    font-weight: 900; color: #3d2030; line-height: 1;
-    letter-spacing: -2px;
+    font-size: clamp(44px, 12vw, 54px);
+    font-weight: 900; color: #2d1020; line-height: 1; letter-spacing: -2px;
   }
   .price-tag {
-    font-size: 12px; font-weight: 700; letter-spacing: 1px;
+    font-size: 11px; font-weight: 700; letter-spacing: 1px;
     text-transform: uppercase; color: #d44872; margin-top: 2px;
   }
-
-  /* ── TRUST STRIP ── */
   .trust-strip {
-    display: flex; flex-wrap: wrap;
-    justify-content: center; gap: 12px; margin-top: 12px;
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 10px;
   }
   .trust-item { font-size: 12px; color: #b08090; }
 
   /* ── SUCCESS ── */
-  .success-icon { font-size: 58px; margin-bottom: 14px; }
+  .success-icon { font-size: 56px; margin-bottom: 12px; }
   .email-confirm-box {
     background: white; border: 2px solid #d44872;
-    border-radius: 14px; padding: 16px 22px;
-    width: 100%; margin-bottom: 20px;
+    border-radius: 14px; padding: 15px 20px;
+    width: 100%; margin-bottom: 18px;
     box-shadow: 0 4px 16px rgba(212,72,114,0.12);
   }
   .steps-box {
     background: white; border-radius: 14px;
-    padding: 20px; width: 100%;
-    border: 1px solid #ffe0e8;
-    text-align: left; margin-bottom: 16px;
+    padding: 18px; width: 100%; border: 1px solid #ffe0e8;
+    text-align: left; margin-bottom: 14px;
   }
   .steps-label {
-    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
-    text-transform: uppercase; color: #d44872; margin-bottom: 14px;
+    font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #d44872; margin-bottom: 12px;
   }
   .step-row {
-    display: flex; gap: 10px; margin-bottom: 10px;
-    font-size: 14px; color: #5a3545; align-items: flex-start;
-    line-height: 1.5;
+    display: flex; gap: 10px; margin-bottom: 9px;
+    font-size: 14px; color: #5a3545; align-items: flex-start; line-height: 1.5;
   }
   .step-num { color: #d44872; font-weight: 700; flex-shrink: 0; }
 
   @media (max-height: 680px) {
-    .screen { justify-content: flex-start; padding-top: 52px; }
+    .screen { justify-content: flex-start; padding-top: 72px; }
   }
 </style>
 </head>
 <body>
 
-<div class="progress-wrap">
-  <div class="progress-fill" id="progressBar"></div>
-</div>
-<div class="logo-bar">
-  <span class="logo-text">New Mama Hub</span>
-</div>
+<div class="sale-banner">Father's Day Sale · Ends June 15 · <span>$2.99</span></div>
+<div class="progress-wrap"><div class="progress-fill" id="progressBar"></div></div>
+<div class="logo-bar"><span class="logo-text">New Mama Hub</span></div>
 
 
-<!-- ══════════════════════════════════════════
-     SCREEN 1 · EBOOK OVERVIEW
-══════════════════════════════════════════ -->
+<!-- ══ S1 · HERO ══ -->
 <div class="screen bg-cream active" id="s1">
   <div class="screen-inner">
     <div class="badge">🎁 Father's Day Gift</div>
-    <h1 class="headline">She Needs You Here</h1>
-    <p class="subhead" style="margin-bottom:10px;">A Dad's Complete Guide to the Fourth Trimester — 10 chapters, everything he needs to show up for you.</p>
-
-    <div class="price-hero">
-      <span class="price-hero-old">$24.99</span>
-      <span class="price-hero-new">$2.99</span>
-      <span class="price-hero-tag">Father's Day Sale</span>
-    </div>
-
-    <div class="chapter-list">
-      <div class="chapter-row" onclick="toggleChapter(this)">
-        <div class="ch-num">01–02</div>
-        <div style="flex:1">
-          <div class="ch-title">The Stakes + What She Is Going Through</div>
-          <div class="ch-expand">The real data on the fourth trimester, the hormonal crash, and the gap between what she feels and what he sees.</div>
-        </div>
-        <span class="ch-arrow">›</span>
-      </div>
-      <div class="chapter-row" onclick="toggleChapter(this)">
-        <div class="ch-num">03</div>
-        <div style="flex:1">
-          <div class="ch-title">What He Is Going Through</div>
-          <div class="ch-expand">His helplessness, exclusion, resentment, grief, and fear — named and taken seriously for the first time.</div>
-        </div>
-        <span class="ch-arrow">›</span>
-      </div>
-      <div class="chapter-row" onclick="toggleChapter(this)">
-        <div class="ch-num">04–05</div>
-        <div style="flex:1">
-          <div class="ch-title">Words That Land Wrong + How to Actually Help</div>
-          <div class="ch-expand">What to stop saying. The shift from reactive to proactive — in concrete, actionable terms he can use today.</div>
-        </div>
-        <span class="ch-arrow">›</span>
-      </div>
-      <div class="chapter-row" onclick="toggleChapter(this)">
-        <div class="ch-num">06</div>
-        <div style="flex:1">
-          <div class="ch-title">Week by Week</div>
-          <div class="ch-expand">From days 1–5 through months 6–12. What each phase looks like and exactly what he should do.</div>
-        </div>
-        <span class="ch-arrow">›</span>
-      </div>
-      <div class="chapter-row" onclick="toggleChapter(this)">
-        <div class="ch-num">07–08</div>
-        <div style="flex:1">
-          <div class="ch-title">Intimacy + The Hard Conversations</div>
-          <div class="ch-expand">An honest intimacy timeline. Scripts for six conversations most dads avoid until it's too late.</div>
-        </div>
-        <span class="ch-arrow">›</span>
-      </div>
-      <div class="chapter-row" onclick="toggleChapter(this)">
-        <div class="ch-num">09–10</div>
-        <div style="flex:1">
-          <div class="ch-title">His Mental Health + When to Escalate</div>
-          <div class="ch-expand">Paternal PPD — real, common, looks nothing like you'd expect. Signs she needs professional help before she can ask.</div>
-        </div>
-        <span class="ch-arrow">›</span>
-      </div>
-    </div>
-
+    <div class="eyebrow">For the dad who loves you — but feels lost</div>
+    <h1 class="headline">He became a dad.<br>No one gave him <span class="accent">a map.</span></h1>
+    <div class="sep"></div>
+    <p class="subhead">He loves you. He loves your baby. But the fourth trimester? Nobody prepared him for this — and he's figuring it out alone, in silence.</p>
+    <p style="font-size:14px; color:#b08090; font-style:italic; margin-bottom:22px;">Takes 2 minutes. Find out exactly what he needs.</p>
     <div class="btn-wrap">
-      <button class="btn btn-rose" onclick="next()">Get it for $2.99 →</button>
+      <button class="btn btn-rose" onclick="next()">Take the quiz →</button>
     </div>
-    <p class="proof-line">⭐⭐⭐⭐⭐ &nbsp;3,847 moms have gifted this</p>
+    <p class="proof-line">⭐⭐⭐⭐⭐ &nbsp;3,847 moms have gifted this to their partner</p>
   </div>
 </div>
 
 
-<!-- ══════════════════════════════════════════
-     SCREEN 2 · EMAIL
-══════════════════════════════════════════ -->
+<!-- ══ S2 · Q1 — Dad persona ══ -->
 <div class="screen bg-pink" id="s2">
   <div class="screen-inner">
-    <h2 class="headline">Where should we<br>send your ebook?</h2>
+    <div class="quiz-dots">
+      <div class="dot active" id="dot1"></div>
+      <div class="dot" id="dot2"></div>
+      <div class="dot" id="dot3"></div>
+      <div class="dot" id="dot4"></div>
+      <div class="dot" id="dot5"></div>
+    </div>
+    <div class="quiz-label">Question 1 of 5</div>
+    <h2 class="headline" style="font-size:clamp(20px,5.5vw,26px);">Which sounds most like your partner right now?</h2>
+    <div class="chips">
+      <button class="chip" onclick="pickQ1('clueless', this)">
+        <span class="chip-em">🤷</span><span>He's a genuinely good guy — just has absolutely no idea what to do</span>
+      </button>
+      <button class="chip" onclick="pickQ1('provider', this)">
+        <span class="chip-em">💼</span><span>He works hard and loves us — but shuts down when things get emotional</span>
+      </button>
+      <button class="chip" onclick="pickQ1('wrong', this)">
+        <span class="chip-em">😬</span><span>He tries to help — but always says or does the wrong thing</span>
+      </button>
+      <button class="chip" onclick="pickQ1('distant', this)">
+        <span class="chip-em">📱</span><span>He's physically there but feels a million miles away</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ S3 · Q2 — Hardest on relationship ══ -->
+<div class="screen bg-cream" id="s3">
+  <div class="screen-inner">
+    <div class="quiz-dots">
+      <div class="dot done" id="dot1b"></div>
+      <div class="dot active" id="dot2b"></div>
+      <div class="dot" id="dot3b"></div>
+      <div class="dot" id="dot4b"></div>
+      <div class="dot" id="dot5b"></div>
+    </div>
+    <div class="quiz-label">Question 2 of 5</div>
+    <h2 class="headline" style="font-size:clamp(20px,5.5vw,26px);">What's felt hardest on your relationship since the baby?</h2>
+    <div class="chips">
+      <button class="chip" onclick="pickQ2('talk', this)">
+        <span class="chip-em">💬</span><span>We barely talk about anything real anymore</span>
+      </button>
+      <button class="chip" onclick="pickQ2('alone', this)">
+        <span class="chip-em">🙋</span><span>I feel like I'm doing everything alone — even when he's home</span>
+      </button>
+      <button class="chip" onclick="pickQ2('unseen', this)">
+        <span class="chip-em">😶</span><span>He doesn't see how much I'm actually carrying</span>
+      </button>
+      <button class="chip" onclick="pickQ2('drift', this)">
+        <span class="chip-em">💔</span><span>We feel more like roommates than partners</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ S4 · Q3 — When he tries ══ -->
+<div class="screen bg-pink" id="s4">
+  <div class="screen-inner">
+    <div class="quiz-dots">
+      <div class="dot done"></div>
+      <div class="dot done"></div>
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="quiz-label">Question 3 of 5</div>
+    <h2 class="headline" style="font-size:clamp(20px,5.5vw,26px);">When he tries to help, what usually happens?</h2>
+    <div class="chips">
+      <button class="chip" onclick="pickQ3('fix', this)">
+        <span class="chip-em">🔧</span><span>He tries to fix the problem instead of just being present</span>
+      </button>
+      <button class="chip" onclick="pickQ3('quiet', this)">
+        <span class="chip-em">🤐</span><span>He goes quiet because he doesn't know what to say</span>
+      </button>
+      <button class="chip" onclick="pickQ3('worse', this)">
+        <span class="chip-em">😅</span><span>He says something that accidentally makes it worse</span>
+      </button>
+      <button class="chip" onclick="pickQ3('space', this)">
+        <span class="chip-em">🚶</span><span>He backs off — thinks giving me space is helping</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ S5 · Q4 — What she wishes he understood ══ -->
+<div class="screen bg-cream" id="s5">
+  <div class="screen-inner">
+    <div class="quiz-dots">
+      <div class="dot done"></div>
+      <div class="dot done"></div>
+      <div class="dot done"></div>
+      <div class="dot active"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="quiz-label">Question 4 of 5</div>
+    <h2 class="headline" style="font-size:clamp(20px,5.5vw,26px);">What do you most wish he understood?</h2>
+    <div class="chips">
+      <button class="chip" onclick="pickQ4('real', this)">
+        <span class="chip-em">😢</span><span>That what I'm feeling is real — not dramatic or "hormonal"</span>
+      </button>
+      <button class="chip" onclick="pickQ4('empty', this)">
+        <span class="chip-em">🔋</span><span>How completely depleted I am — and that I can't explain it</span>
+      </button>
+      <button class="chip" onclick="pickQ4('love', this)">
+        <span class="chip-em">💛</span><span>That I still love him — I just need more from him right now</span>
+      </button>
+      <button class="chip" onclick="pickQ4('ask', this)">
+        <span class="chip-em">🤝</span><span>That I need him to step up without me having to ask</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ S6 · Q5 — Timeline ══ -->
+<div class="screen bg-pink" id="s6">
+  <div class="screen-inner">
+    <div class="quiz-dots">
+      <div class="dot done"></div>
+      <div class="dot done"></div>
+      <div class="dot done"></div>
+      <div class="dot done"></div>
+      <div class="dot active"></div>
+    </div>
+    <div class="quiz-label">Question 5 of 5</div>
+    <h2 class="headline" style="font-size:clamp(20px,5.5vw,26px);">Where are you right now?</h2>
+    <p class="subhead" style="margin-bottom:16px;">This helps us show you what other moms in your exact situation have experienced.</p>
+    <div class="chips">
+      <button class="chip" onclick="pickQ5('pregnant', this)">
+        <span class="chip-em">🤰</span><span>Still pregnant / due soon</span>
+      </button>
+      <button class="chip" onclick="pickQ5('newborn', this)">
+        <span class="chip-em">🌙</span><span>0–3 months postpartum</span>
+      </button>
+      <button class="chip" onclick="pickQ5('growing', this)">
+        <span class="chip-em">☀️</span><span>3–6 months postpartum</span>
+      </button>
+      <button class="chip" onclick="pickQ5('older', this)">
+        <span class="chip-em">🌱</span><span>6+ months postpartum</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ S7 · RESULTS ══ -->
+<div class="screen bg-cream" id="s7">
+  <div class="screen-inner">
+    <div class="eyebrow">Your result</div>
+    <div class="result-card">
+      <div class="result-type" id="resultType">Your partner is</div>
+      <div class="result-title" id="resultTitle">The Good Man Who Got Lost</div>
+      <div class="result-body" id="resultBody">
+        <p>He didn't pull back because he stopped caring. He pulled back because no one ever told him what to do next — and standing still felt safer than doing the wrong thing.</p>
+        <p>He's not failing you on purpose. He just has no roadmap.</p>
+      </div>
+    </div>
+    <div class="insight-box">
+      <div class="insight-label">What most people don't know</div>
+      <div class="insight-text" id="insightText">He's carrying more than he shows. Most dads in the fourth trimester feel helpless, excluded, and quietly afraid — but the pressure to "be strong" means they never say it out loud. He's figuring this out alone, just like you are.</div>
+    </div>
+    <div class="reframe-box">
+      <p><strong>This gift isn't "you're not doing enough."</strong><br>It's "here's everything you need to get it right — because I know you want to."</p>
+    </div>
+    <div class="btn-wrap">
+      <button class="btn btn-rose" onclick="next()">Get him the guide →</button>
+    </div>
+    <p class="proof-line" style="margin-bottom:0;">⭐⭐⭐⭐⭐ &nbsp;<span id="resultCount">2,847 moms</span> in your situation gifted this</p>
+  </div>
+</div>
+
+
+<!-- ══ S8 · EMAIL ══ -->
+<div class="screen bg-pink" id="s8">
+  <div class="screen-inner">
+    <h2 class="headline">Where should we<br>send the ebook?</h2>
     <div class="sep"></div>
-    <p class="subhead">We'll email it to you instantly after purchase — ready to forward to him.</p>
+    <p class="subhead">We'll email the Dad's Guide to the Fourth Trimester instantly after purchase — ready to forward to him.</p>
     <input type="email" class="email-input" id="emailInput" placeholder="Your email address" autocomplete="email" />
     <div class="btn-wrap">
       <button class="btn btn-dark" onclick="submitEmail()">Continue to checkout →</button>
     </div>
-    <p class="proof-line" style="margin-bottom:18px;">🔒 No spam, ever &nbsp;·&nbsp; ⚡ Instant delivery</p>
-    <div class="card">
-      <div class="card-stars">⭐⭐⭐⭐⭐</div>
-      <p class="card-quote">"My husband finished it in one sitting and came to me with a list of things he wanted to do differently. Best money I've ever spent."</p>
-      <p class="card-attr">— Amanda T., New Mama Hub member</p>
+    <p class="proof-line" style="margin-bottom:16px;">🔒 No spam &nbsp;·&nbsp; ⚡ Instant delivery &nbsp;·&nbsp; 💛 Just $2.99</p>
+    <div class="tcard">
+      <div class="tcard-stars">⭐⭐⭐⭐⭐</div>
+      <p class="tcard-quote">"He read it in one sitting. The next morning he got up with the baby without me asking — for the first time. I cried."</p>
+      <p class="tcard-attr">— Jessica R., 8 weeks postpartum</p>
     </div>
   </div>
 </div>
 
 
-<!-- ══════════════════════════════════════════
-     SCREEN 3 · PAYWALL
-══════════════════════════════════════════ -->
-<div class="screen bg-cream" id="s3">
+<!-- ══ S9 · PAYWALL ══ -->
+<div class="screen bg-cream" id="s9">
   <div class="screen-inner">
-    <h2 class="headline" style="margin-bottom:16px;">Your gift is almost ready 🎁</h2>
+    <h2 class="headline" style="margin-bottom:14px;">Your gift is almost ready 🎁</h2>
     <div class="product-box">
-      <div class="product-title">She Needs You Here</div>
-      <div class="product-by">A Dad's Guide to the Fourth Trimester · New Mama Hub</div>
+      <div class="product-title">Dad's Guide to the Fourth Trimester</div>
+      <div class="product-by">New Mama Hub · Father's Day Edition</div>
       <div class="product-item"><span class="pi-check">✓</span><span>Instant PDF — sent to your email</span></div>
       <div class="product-item"><span class="pi-check">✓</span><span>10 chapters — everything he needs to know</span></div>
-      <div class="product-item"><span class="pi-check">✓</span><span>Emotions, body changes, intimacy & mental health</span></div>
-      <div class="product-item"><span class="pi-check">✓</span><span>Written by a wife AND husband — both perspectives</span></div>
+      <div class="product-item"><span class="pi-check">✓</span><span>Written by a wife AND husband — both sides</span></div>
+      <div class="product-item"><span class="pi-check">✓</span><span>What to say, what to do, week by week</span></div>
       <div class="product-item"><span class="pi-check">✓</span><span>Forward it directly to your partner</span></div>
     </div>
     <div class="price-block">
       <div class="price-old">$24.99</div>
       <div class="price-new">$2.99</div>
-      <div class="price-tag">Father's Day Sale</div>
+      <div class="price-tag">Father's Day Sale — Ends June 15</div>
     </div>
     <div class="btn-wrap">
       <a class="btn btn-rose" id="stripeBtn"
@@ -411,32 +582,26 @@ src="https://www.facebook.com/tr?id=1340195598069225&ev=PageView&noscript=1"
 </div>
 
 
-<!-- ══════════════════════════════════════════
-     SCREEN 4 · SUCCESS
-══════════════════════════════════════════ -->
-<div class="screen bg-cream" id="s4">
+<!-- ══ S10 · SUCCESS ══ -->
+<div class="screen bg-cream" id="s10">
   <div class="screen-inner">
     <div class="success-icon">💌</div>
     <h2 class="headline">It's on its way!</h2>
     <p class="subhead" style="margin-bottom:12px;">We're sending the ebook to:</p>
-
     <div class="email-confirm-box">
       <div style="font-size:11px; color:#b08090; letter-spacing:1px; text-transform:uppercase; margin-bottom:6px;">Delivery email</div>
-      <div id="successEmail" style="font-size:17px; font-weight:800; color:#3d2030; word-break:break-all;">your email</div>
+      <div id="successEmail" style="font-size:17px; font-weight:800; color:#2d1020; word-break:break-all;">your email</div>
     </div>
-
-    <p style="font-size:14px; color:#7a4f5e; line-height:1.7; margin-bottom:20px; max-width:340px;">
-      Check your inbox in the next few minutes — including your spam folder just in case. It arrives as a PDF, ready to forward to him. 🎁
+    <p style="font-size:14px; color:#7a4f5e; line-height:1.7; margin-bottom:18px; max-width:340px;">
+      Check your inbox in the next few minutes — including spam just in case. It's a PDF, ready to forward to him. 🎁
     </p>
-
     <div class="steps-box">
       <div class="steps-label">What happens next</div>
       <div class="step-row"><span class="step-num">1.</span><span>Check your inbox for an email from New Mama Hub</span></div>
-      <div class="step-row"><span class="step-num">2.</span><span>Open the PDF attachment — it's his guide</span></div>
-      <div class="step-row"><span class="step-num">3.</span><span>Forward it to him, print it, or leave it open on his phone 💛</span></div>
+      <div class="step-row"><span class="step-num">2.</span><span>Open the PDF — it's his guide</span></div>
+      <div class="step-row"><span class="step-num">3.</span><span>Forward it to him, or leave it open on his phone 💛</span></div>
     </div>
-
-    <p style="font-size:13px; color:#b08090; margin-top:18px;">
+    <p style="font-size:13px; color:#b08090; margin-top:14px;">
       Know a mama who needs this? &nbsp;
       <a href="javascript:void(0)" onclick="shareLink()" style="color:#d44872; font-weight:600;">Share this gift →</a>
     </p>
@@ -445,21 +610,59 @@ src="https://www.facebook.com/tr?id=1340195598069225&ev=PageView&noscript=1"
 
 
 <script>
-  const TOTAL = 4;
+  const TOTAL = 10;
   let cur = 1;
+  let answers = { q1: 'clueless', q2: 'alone', q3: 'quiet', q4: 'real', q5: 'newborn' };
 
+  // ── Dad persona copy ──────────────────────────────────────
+  const DAD_TYPES = {
+    clueless: {
+      type: 'Your partner is',
+      title: 'The Good Man Who Got Lost',
+      body: '<p>He didn\'t pull back because he stopped caring. He pulled back because no one ever told him what to do next — and standing still felt safer than doing the wrong thing.</p><p>He\'s not failing you on purpose. He just has no roadmap.</p>',
+      insight: 'He\'s carrying more than he shows. Most new dads feel helpless and quietly terrified — but the pressure to "be strong" means they never say it out loud. He\'s figuring this out completely alone, just like you are.',
+    },
+    provider: {
+      type: 'Your partner is',
+      title: 'The Provider Who Forgot to Be Present',
+      body: '<p>He shows love by working harder, fixing problems, keeping everything running. He thinks that\'s what you need. He has no idea that what you actually need is just him — present, soft, and listening.</p><p>Nobody taught him that. This guide does.</p>',
+      insight: 'Emotionally unavailable dads are almost never choosing that. They were raised to equate love with provision — to fix, not feel. The fourth trimester breaks that script, and most of them don\'t know how to rewrite it.',
+    },
+    wrong: {
+      type: 'Your partner is',
+      title: 'The Man With Good Intentions and No Script',
+      body: '<p>He\'s trying. You can see it. But every time he opens his mouth, something goes wrong — a bad joke, an accidental fix, a tone-deaf comment. It\'s not cruelty. It\'s a total lack of tools.</p><p>He needs the words. This guide gives him the words.</p>',
+      insight: 'When dads say the wrong thing, it\'s rarely because they don\'t care — it\'s because they\'re terrified of the silence and fill it with the wrong thing. What he needs isn\'t to be smarter. He needs to feel less panicked.',
+    },
+    distant: {
+      type: 'Your partner is',
+      title: 'The Dad Who Pulled Away to Cope',
+      body: '<p>He\'s not absent because he doesn\'t love you. He pulled back because he felt pushed out — and nobody told him how to come back in. The distance isn\'t indifference. It\'s a coping mechanism he doesn\'t know he\'s using.</p><p>This guide brings him back.</p>',
+      insight: 'When new dads go quiet or seem checked out, it\'s often because they feel peripheral — like the baby took your focus and they don\'t know how to matter anymore. His withdrawal is actually a sign he\'s struggling. He just can\'t say it.',
+    },
+  };
+
+  const STAGE_COUNTS = {
+    pregnant: '1,247 moms',
+    newborn:  '2,847 moms',
+    growing:  '1,943 moms',
+    older:    '987 moms',
+  };
+
+  // ── Init ──────────────────────────────────────────────────
   window.addEventListener('DOMContentLoaded', () => {
     const p = new URLSearchParams(window.location.search);
     if (p.get('payment') === 'success') {
       const saved = sessionStorage.getItem('ft_buyer_email') || localStorage.getItem('ft_buyer_email');
       if (saved) document.getElementById('successEmail').textContent = saved;
       fbq('track', 'Purchase', { value: 2.99, currency: 'USD' });
-      goTo(4);
+      goTo(10);
     } else {
       updateProgress();
     }
   });
 
+  // ── Navigation ────────────────────────────────────────────
   function goTo(n) {
     document.getElementById(`s${cur}`).classList.remove('active');
     cur = n;
@@ -476,10 +679,56 @@ src="https://www.facebook.com/tr?id=1340195598069225&ev=PageView&noscript=1"
       Math.round((cur / TOTAL) * 100) + '%';
   }
 
-  function toggleChapter(row) {
-    row.classList.toggle('open');
+  // ── Quiz picks ────────────────────────────────────────────
+  function pickQ1(val, el) {
+    answers.q1 = val;
+    highlight('#s2', el);
+    setTimeout(() => next(), 320);
   }
 
+  function pickQ2(val, el) {
+    answers.q2 = val;
+    highlight('#s3', el);
+    setTimeout(() => next(), 320);
+  }
+
+  function pickQ3(val, el) {
+    answers.q3 = val;
+    highlight('#s4', el);
+    setTimeout(() => next(), 320);
+  }
+
+  function pickQ4(val, el) {
+    answers.q4 = val;
+    highlight('#s5', el);
+    setTimeout(() => next(), 320);
+  }
+
+  function pickQ5(val, el) {
+    answers.q5 = val;
+    highlight('#s6', el);
+    setTimeout(() => {
+      buildResult();
+      next();
+    }, 320);
+  }
+
+  function highlight(screen, el) {
+    document.querySelectorAll(screen + ' .chip').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+
+  // ── Build personalized result ─────────────────────────────
+  function buildResult() {
+    const d = DAD_TYPES[answers.q1] || DAD_TYPES.clueless;
+    document.getElementById('resultType').textContent = d.type;
+    document.getElementById('resultTitle').textContent = d.title;
+    document.getElementById('resultBody').innerHTML = d.body;
+    document.getElementById('insightText').textContent = d.insight;
+    document.getElementById('resultCount').textContent = STAGE_COUNTS[answers.q5] || '2,847 moms';
+  }
+
+  // ── Email submit ──────────────────────────────────────────
   function submitEmail() {
     const el = document.getElementById('emailInput');
     const v = el.value.trim();
@@ -500,10 +749,11 @@ src="https://www.facebook.com/tr?id=1340195598069225&ev=PageView&noscript=1"
     next();
   }
 
+  // ── Share ─────────────────────────────────────────────────
   function shareLink() {
     const url = window.location.origin + window.location.pathname;
     if (navigator.share) {
-      navigator.share({ title: 'She Needs You Here — Father\'s Day Gift', url });
+      navigator.share({ title: "Dad's Guide to the Fourth Trimester — Father's Day Gift", url });
     } else if (navigator.clipboard) {
       navigator.clipboard.writeText(url).then(() => alert('Link copied!'));
     }
